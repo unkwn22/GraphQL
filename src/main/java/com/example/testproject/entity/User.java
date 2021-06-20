@@ -23,4 +23,13 @@ public class User extends BaseEntity{
     @Column(nullable = false)
     private String password;
 
+    public void update(String email, String password){
+        if(!email.equals("")){
+            this.email = email;
+        }
+        if(!password.equals("")){
+            this.password = password;
+        }
+    }
+
 }

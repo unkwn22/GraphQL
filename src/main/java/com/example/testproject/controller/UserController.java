@@ -1,15 +1,13 @@
 package com.example.testproject.controller;
 
 import com.example.testproject.dto.CreateRequestDto;
+import com.example.testproject.dto.UserRequestDto;
 import com.example.testproject.dto.UserResponseDto;
 import com.example.testproject.entity.User;
 import com.example.testproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,4 +28,13 @@ public class UserController {
     public ResponseEntity<List<UserResponseDto>> getAllUser(){
         return ResponseEntity.ok(userService.getAllUsers());
     }
+
+    @PostMapping ("api/user/{id}")
+    public ResponseEntity<UserResponseDto> updateUser (@PathVariable Long id, @RequestBody UserRequestDto userRequestDto){
+        User user = userService.updateUser(id, userRequestDto);
+        UserResponseDto userResponseDto = new UserResponseDto(user);
+        return ResponseEntity.ok().body(userResponseDto);
+    }
+
+
 }
