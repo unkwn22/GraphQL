@@ -1,6 +1,7 @@
 package com.example.testproject.controller;
 
 import com.example.testproject.dto.CreateRequestDto;
+import com.example.testproject.dto.DeleteRequestDto;
 import com.example.testproject.dto.UserRequestDto;
 import com.example.testproject.dto.UserResponseDto;
 import com.example.testproject.entity.User;
@@ -30,8 +31,15 @@ public class UserController {
     }
 
     @PostMapping ("api/user/{id}")
-    public ResponseEntity<UserResponseDto> updateUser (@PathVariable Long id, @RequestBody UserRequestDto userRequestDto){
+    public ResponseEntity<UserResponseDto> updateUser(@PathVariable Long id, @RequestBody UserRequestDto userRequestDto){
         User user = userService.updateUser(id, userRequestDto);
+        UserResponseDto userResponseDto = new UserResponseDto(user);
+        return ResponseEntity.ok().body(userResponseDto);
+    }
+
+    @DeleteMapping("api/user/{id}")
+    public ResponseEntity<UserResponseDto> deleteUser(@PathVariable Long id, @RequestBody DeleteRequestDto deleteRequestDto){
+        User user = userService.deleteUser(id, deleteRequestDto);
         UserResponseDto userResponseDto = new UserResponseDto(user);
         return ResponseEntity.ok().body(userResponseDto);
     }

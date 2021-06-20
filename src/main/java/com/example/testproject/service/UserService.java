@@ -1,6 +1,7 @@
 package com.example.testproject.service;
 
 import com.example.testproject.dto.CreateRequestDto;
+import com.example.testproject.dto.DeleteRequestDto;
 import com.example.testproject.dto.UserRequestDto;
 import com.example.testproject.dto.UserResponseDto;
 import com.example.testproject.entity.User;
@@ -58,7 +59,7 @@ public class UserService {
 
     public User updateUser(Long id, UserRequestDto userRequestDto){
         if(!userRepository.existsByUserIdAndUsernameAndPassword(id, userRequestDto.getUsername(), userRequestDto.getPassword())){
-            throw new BadRequestException("회원 정보가 올바르지 않습니다.");
+            throw new BadRequestException("정보가 올바르지 않습니다.");
         }
         if(userRepository.existsByEmail(userRequestDto.getChangeEmail())){
             throw new BadRequestException("이미 사용 중인 이메일 입니다.");
@@ -71,4 +72,15 @@ public class UserService {
 
         return userRepository.save(user);
     }
+
+    public User deleteUser(Long id, DeleteRequestDto deleteRequestDto){
+        if(!userRepository.existsByUserIdAndUsernameAndPassword(id, deleteRequestDto.getUsername(), deleteRequestDto.getPassword())){
+            throw new BadRequestException("정보가 올바르지 않습니다.");
+        }
+
+        User user = userRepository.findByUserId(id);
+        userRepository.deleteById(id);
+        return user;
+    }
+
 }
