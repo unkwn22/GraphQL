@@ -4,7 +4,7 @@ import com.example.testproject.entity.User;
 import lombok.Data;
 
 @Data
-public class CreateResponseDto {
+public class UserResponseDto {
 
     private String email;
 
@@ -12,9 +12,10 @@ public class CreateResponseDto {
 
     private String password;
 
-    public CreateResponseDto(User user){
+    public UserResponseDto(User user){
         this.email = user.getEmail();
         this.username = user.getUsername();
         this.password = user.getPassword();
     }
+
 }
