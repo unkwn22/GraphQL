@@ -4,13 +4,12 @@ schema {
 }
 
 type Mutation {
-    addUser(email: String!, username: String!, password: String!): User!
+    addUser(email: String!, username: String!, password: String!): String
 }
 
 type Query{
     users: [User]
-    user(id: String): User
-    userbyusername(username: String): User
+    user(id: String): String
 }
 
 type User{

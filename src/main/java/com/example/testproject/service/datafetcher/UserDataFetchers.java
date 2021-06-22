@@ -1,6 +1,7 @@
 package com.example.testproject.service.datafetcher;
 
 import com.example.testproject.entity.User;
+import com.example.testproject.exception.BadRequestException;
 import com.example.testproject.repository.UserRepository;
 import graphql.schema.DataFetcher;
 import org.springframework.stereotype.Component;
@@ -36,7 +37,13 @@ public class UserDataFetchers {
     public DataFetcher<User> addUser() {
         return environment -> {
             String email = environment.getArgument("email");
+            if(userRepository.existsByEmail(email)){
+                throw new BadRequestException("이미 사용중인 이메일 입니다.");
+            }
             String username = environment.getArgument("username");
+            if(userRepository.existsByUsername(username)){
+                throw new BadRequestException("이미 사용중인 닉네임 입니다.");
+            }
             String password = environment.getArgument("password");
 
             User user = User.builder()
