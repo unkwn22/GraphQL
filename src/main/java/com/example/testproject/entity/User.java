@@ -1,5 +1,6 @@
 package com.example.testproject.entity;
 
+import io.leangen.graphql.annotations.GraphQLQuery;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ public class User extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private int userId;
 
     @Column(nullable = false)
     private String email;
@@ -31,5 +32,4 @@ public class User extends BaseEntity{
             this.password = password;
         }
     }
-
 }
