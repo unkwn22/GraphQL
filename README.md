@@ -37,3 +37,8 @@
 - .graphql 파일의 Schema, Mutation, Type 이해
 - GraphQL로 부터 CLIENT 한테 전달 받는 데이터 타입 및 반환 되는 데이터 타입 이해
 - datafetcher 및 schema 작성법
+
+## 참고 자료
+- https://www.youtube.com/watch?v=zX2I7-aIldE
+- https://www.youtube.com/watch?v=rH2kdMPUQpQ&list=PLiwhu8iLxKwL1TU0RMM6z7TtkyW-3-5Wi&index=2
+
