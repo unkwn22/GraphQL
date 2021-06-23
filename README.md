@@ -27,7 +27,7 @@
 |Restful 유저 수정|POST|/api/user/{id}| email, password |
 |Restful 유저 삭제|DELETE|/api/user/{id}| username, password |
 |GraphQL 유저 등록||/graphQL| mutation{addUser(email: "", username: "", password: "")} |
-|GraphQL 유저 개별 조회|/graphQL| {user(username: "a"){username email password}} |
+|GraphQL 유저 개별 조회||/graphQL| {user(username: "a"){username email password}} |
 |GraphQL 전체 조회||/graphQL| {users{username email password}} |
 |GraphQL 유저 수정||/graphQL| mutation{updateUser(username: "", email: "", password: "")}|
 |GraphQL 유저 삭제||/graphQL| mutation{deleteUser(username: "")} |
