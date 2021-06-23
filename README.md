@@ -19,6 +19,7 @@
 ## GraphQL 구조
 ![](images/GraphQL.jpg)
 
+## API 설계
 |기능|Method|URL| Request Params / Body|
 |:---|:---:|:---:|:---:|
 |Restful 유저 등록|POST|api/user| email, username, password |
@@ -31,3 +32,8 @@
 |GraphQL 유저 수정||/graphQL| mutation{updateUser(username: "", email: "", password: "")}|
 |GraphQL 유저 삭제||/graphQL| mutation{deleteUser(username: "")} |
 
+## 개선 하고 싶은 점
+- GraphQL Query에 대한 공부 (.graphql 파일 문법을 더 자세히 알고 싶다)
+- .graphql 파일의 Schema, Mutation, Type 이해
+- GraphQL로 부터 CLIENT 한테 전달 받는 데이터 타입 및 반환 되는 데이터 타입 이해
+- datafetcher 및 schema 작성법
