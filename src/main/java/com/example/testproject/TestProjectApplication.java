@@ -24,19 +24,19 @@ public class TestProjectApplication implements CommandLineRunner {
         User user1 = User.builder()
                 .email("unkwn11@naver.com")
                 .username("a")
-                .password("jason272k")
+                .password("a")
                 .build();
 
         User user2 = User.builder()
                 .email("unkwn12@naver.com")
                 .username("b")
-                .password("jason272k")
+                .password("b")
                 .build();
 
         User user3 = User.builder()
                 .email("unkwn13@naver.com")
                 .username("c")
-                .password("jason272k")
+                .password("c")
                 .build();
 
         userRepository.save(user1);

@@ -5,11 +5,13 @@ schema {
 
 type Mutation {
     addUser(email: String!, username: String!, password: String!): String
+    updateUser(username: String!, email: String!, password: String!): String
+    deleteUser(username: String!): String
 }
 
 type Query{
     users: [User]
-    user(id: String): String
+    user(username: String!): User
 }
 
 type User{

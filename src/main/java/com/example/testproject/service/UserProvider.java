@@ -52,11 +52,12 @@ public class UserProvider {
         return RuntimeWiring.newRuntimeWiring()
                 .type("Query", typeWiring -> typeWiring
                         .dataFetcher("user", userDataFetchers.getUser())
-                        .dataFetcher("userbyusername", userDataFetchers.getUserByUsername())
                         .dataFetcher("users", userDataFetchers.getAllUsers())
                 )
                 .type("Mutation", typeWiring -> typeWiring
                         .dataFetcher("addUser", userDataFetchers.addUser())
+                        .dataFetcher("updateUser", userDataFetchers.updateUser())
+                        .dataFetcher("deleteUser", userDataFetchers.deleteUser())
                 )
                 .build();
     }
