@@ -14,3 +14,4 @@
 - 개발 환경: Springboot (Gradle), Jdk 1.8, Spring JPA, GraphQL
 
 ## Restful API 구조
+![](images/RESTFUL-API.jpg)
