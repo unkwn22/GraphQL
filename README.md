@@ -15,3 +15,6 @@
 
 ## Restful API 구조
 ![](images/RESTFUL-API.jpg)
+
+## GraphQL 구조
+![](images/GraphQL.jpg)
