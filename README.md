@@ -2,7 +2,7 @@
 
 # Repository 소개
 
-- Spring boot를 이용한 GraphQL 통신 
+- Spring boot 이용한 GraphQL 통신 
 
 ## 🎯 Target
 
